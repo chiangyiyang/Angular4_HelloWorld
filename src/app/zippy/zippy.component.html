@@ -1,0 +1,15 @@
+<div class="panel panel-default">
+  <div class="panel-heading" 
+      (click)="isExpended = !isExpended">
+    {{ title }}
+    <span 
+      class="glyphicon pull-right" 
+      [ngClass]="{
+        'glyphicon-chevron-down': !isExpended,
+        'glyphicon-chevron-up': isExpended
+      }"></span>
+  </div>
+  <div class="panel-body" [hidden]="!isExpended">
+    <ng-content></ng-content>
+  </div>
+</div>
